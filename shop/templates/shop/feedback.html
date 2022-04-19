@@ -1,0 +1,436 @@
+{% extends 'shop/basic.html' %}
+{% block title%} This is our feedback form {% endblock %}
+
+
+{% block css %}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  /* font-smoothing: antialiased; */
+
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  {% comment %} font-weight: 100; {% endcomment %}
+  {% comment %} font-size: 12px; {% endcomment %}
+  {% comment %} line-height: 30px; {% endcomment %}
+  color: #777;
+  /* background: #4CAF50; */
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  /* background-color: brown; */
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+    box-shadow: 8px 8px 30px 0px rgb(42 67 113 / 15%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 50px;
+    padding: 30px 30px 30px 30px;
+    width: 100%;
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+    color: #102136;
+    font-family: "Nunito", Sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 58px;
+    margin-bottom: 34px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+    width: 100%;
+    /* border: 1
+px
+ solid #ccc; */
+    /* background: #FFF; */
+    margin: 0 0 5px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 15px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  /* border: 1px solid #aaa; */
+  border: none;
+  /* border-bottom: 1px solid; */
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #dd3333;
+  color: #FFF;
+  /* margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px; */
+
+  color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #02010100;
+    border-radius: 27px 27px 27px 27px;
+    padding: 13px 30px 14px 30px;
+    font-family: "Rubik", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 23px;
+    letter-spacing: 0.2px;
+
+}
+
+#contact button[type="submit"]:hover {
+  background: #102136;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+ border: none;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+.styler{
+    background-color: brown;
+    width: 100%;
+    height: 100vh;
+    background: url("c15.png");
+}
+
+
+@media(max-width:768px){
+    #contact{
+        margin: 0
+    }
+}
+
+.loader{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background: rgb(0, 0, 0);
+    display:none;
+}
+
+
+
+
+
+
+
+/* GLowing text start here  */
+
+
+
+
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.container4 {
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  /* background:#878888; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* background: url("c15.png"); */
+  margin-bottom: 20px;
+}
+
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 6vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #F40A35;
+  /* background-color: tomato; */
+  margin-right: 10px;
+}
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  font-size: 6vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #2356FF;
+  /* background-color: violet; */
+  margin-left: 10px;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
+}
+
+
+/* Glowing text over here  */
+
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="styler">
+  <div class="container4">
+      <div class="neon">Fast </div>
+      <div class="flux">Enquiry </div>
+    </div>
+  <div class="container">
+      <form id="contact" method="post">
+          <!-- <h3>Contact Form</h3> -->
+          <h4>Get in touch</h4>
+          <fieldset>
+              <input
+                  placeholder="Your name"
+                  type="text"
+                  tabindex="1"
+                  required
+                  autofocus
+                  class="username"
+                  />
+          </fieldset>
+          <fieldset>
+              <input
+                  placeholder="Your Email Address"
+                  type="email"
+                  tabindex="2"
+                  required
+                  class="email"
+                  />
+          </fieldset>
+          <fieldset>
+              <textarea
+                  placeholder="Type your message here...."
+                  tabindex="5"
+                  required
+                  class="message"></textarea>
+          </fieldset>
+          <fieldset>
+              <button
+                  name="submit"
+                  type="submit"
+                  id="contact-submit"
+                  data-submit="...Sending"
+                  class="submit">
+                  Submit
+              </button>
+          </fieldset>
+      </form>
+  </div>
+</div>
+<!-- loader -->
+<div class="loader">
+  <img
+      src="https://media.giphy.com/media/MEiZ5h8lOkM7rwideE/giphy.gif"
+      alt=""
+      />
+</div>
+{% endblock %}
+{% block js %}
+
+<script
+type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript">
+// User ID
+// user_id
+// Access Token
+// random_access-token
+
+(function () {
+// emailjs.init("USERID");
+emailjs.init("ULjwIXGwPFVIx6YV2");
+})();
+
+/**
+emailjs.send("SERVICE ID", "TEMPLATE NAME", {
+to_name: "USERNAME",
+from_name: "FROM NAME",
+message: "MESSAGE",
+});
+**/
+
+function validate() {
+let loader = document.querySelector(".loader");
+let name = document.querySelector(".username");
+let email = document.querySelector(".email");
+let msg = document.querySelector(".message");
+let btn = document.querySelector(".submit");
+
+btn.addEventListener("click", (e) => {
+e.preventDefault();
+if (name.value == "" || email.value == "" || msg.value == "") {
+emptyerror();
+} else {
+loader.style.display = "flex";
+sendmail(name.value, email.value, msg.value);
+success();
+loader.style.display = "none";
+}
+});
+}
+validate();
+
+function sendmail(name, email, msg) {
+emailjs.send("service_ghwx06m", "template_nx1bcab", {
+to_name: "your recipient name",
+from_name: email,
+message: msg,
+});
+}
+
+function emptyerror() {
+Swal.fire({
+icon: "error",
+title: "Oops...",
+text: "Fields cannot be empty!",
+});
+}
+
+function error() {
+Swal.fire({
+icon: "error",
+title: "Oops...",
+text: "Something went wrong!",
+});
+}
+
+function success() {
+Swal.fire({
+icon: "success",
+title: "Success...",
+text: "Successfully sent message",
+});
+}
+</script>
+
+{% endblock %}

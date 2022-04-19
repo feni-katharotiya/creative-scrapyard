@@ -1,0 +1,671 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{product.product_name}} - My Awesome Cart{% endblock %}
+
+{% block css %}
+
+
+{% comment %} product css start from here {% endcomment %}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*
+{
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+
+body
+{
+font-family: 'Roboto', sans-serif;
+}
+a
+{
+text-decoration: none;
+}
+.product-card {
+width: 350px;
+position: relative;
+box-shadow: 0 2px 7px #dfdfdf;
+margin: 50px auto;
+background: #fafafa;
+}
+
+.badge {
+position: absolute;
+left: 0;
+top: 20px;
+text-transform: uppercase;
+font-size: 13px;
+font-weight: 700;
+background: red;
+color: #fff;
+padding: 3px 10px;
+}
+
+.product-tumb {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 300px;
+padding: 5px;
+background: #f0f0f0;
+}
+
+.product-tumb img {
+max-width: 100%;
+max-height: 100%;
+}
+
+.product-details {
+padding: 30px;
+}
+
+.product-catagory {
+display: block;
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+color: #ccc;
+margin-bottom: 18px;
+}
+
+.product-details h4 a {
+font-weight: 500;
+display: block;
+margin-bottom: 18px;
+text-transform: uppercase;
+color: #363636;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+color: #fbb72c;
+}
+
+.product-details p {
+font-size: 15px;
+line-height: 22px;
+margin-bottom: 18px;
+color: #999;
+}
+
+.product-bottom-details {
+overflow: hidden;
+border-top: 1px solid #eee;
+padding-top: 20px;
+}
+
+.product-bottom-details div {
+float: left;
+width: 50%;
+}
+
+.product-price {
+font-size: 18px;
+color: #fbb72c;
+font-weight: 600;
+}
+
+.product-price small {
+font-size: 80%;
+font-weight: 400;
+text-decoration: line-through;
+display: inline-block;
+margin-right: 5px;
+}
+
+.product-links {
+text-align: right;
+}
+
+.product-links a {
+display: inline-block;
+margin-left: 5px;
+color: #e1e1e1;
+transition: 0.3s;
+font-size: 17px;
+}
+
+.product-links a:hover {
+color: #fbb72c;
+}
+
+.pro{
+/* background-color: brown; */
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+@media(max-width:1400px){
+.pro{
+display: block;
+}
+}
+
+/* chrimsmess css start */
+
+@import
+url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+
+
+/* body {
+background: #DFC2F2;
+background-image: linear-gradient( to right, #ffffb3,#ffe6e6);
+background-attachment: fixed;
+background-size: cover;
+
+} */
+
+#container{
+box-shadow: 0 15px 30px 1px grey;
+background: rgba(255, 255, 255, 0.90);
+text-align: center;
+border-radius: 5px;
+overflow: hidden;
+margin: 5em auto;
+height: 350px;
+width: 700px;
+
+
+}
+
+.product-details1 {
+position: relative;
+text-align: left;
+overflow: hidden;
+padding: 30px;
+height: 100%;
+float: left;
+width: 40%;
+
+}
+
+#container .product-details1 h1{
+font-family: 'Bebas Neue', cursive;
+display: inline-block;
+position: relative;
+font-size: 30px;
+color: #344055;
+margin: 0;
+
+}
+
+#container .product-details1 h1:before{
+position: absolute;
+content: '';
+right: 0%;
+top: 0%;
+transform: translate(25px, -15px);
+font-family: 'Bree Serif', serif;
+display: inline-block;
+background: #ffe6e6;
+border-radius: 5px;
+font-size: 14px;
+padding: 5px;
+color: white;
+margin: 0;
+animation: chan-sh 6s ease infinite;
+
+}
+
+.row img{
+width:90%;
+}
+
+h1{
+{% comment %} background:yellow; {% endcomment %}
+display:flex;
+justify-content:center;
+align-item:center;
+}
+
+
+
+{% comment %}
+
+
+{% comment %} products csss end here {% endcomment %}
+
+{% comment %} offers css start from here {% endcomment %}
+
+.ben{
+/* background-color: yellow; */
+width: 100%;
+/* display: flex;
+justify-content: center;
+align-items: center; */
+/* padding: 5px; */
+}
+
+.ben1{
+/* background-color: orange; */
+width: 98%;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+/* padding: 5px; */
+color: #dd3333;
+padding: 5px 5px;
+font-size: 18px;
+font-weight: 500;
+font-family: sans-serif;
+
+}
+
+.ben2{
+/* background-color: rgb(46, 88, 202); */
+width: 95%;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+padding: 5px 5px;
+font-weight: 600;
+font-size: 17px;
+font-family: sans-serif;
+}
+
+.ben3{
+/* background-color: olive; */
+width: 90%;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+padding: 5px 5px;
+font-family: sans-serif;
+font-weight: 500;
+}
+
+.ben3 img{
+width: 22px;
+margin-right: 10px;
+}
+
+.ben3 span{
+color: #2874f0;
+margin-left: 5px;
+}
+
+
+{% comment %} offers css end here {% endcomment %}
+
+
+.row{
+margin-top:10px;
+}
+
+
+
+{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <img src="/media/{{product.image}}" width="233px" height="385px">
+            </div>
+            <!-- <div class ="row"></div>
+        <div class="row"></div> -->
+            <div class="row my-3">
+                <button class="btn btn-primary mx-3">Buy Now</button>
+                <button class="btn btn-primary">Add To Cart</button>
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h5>{{product.product_name}}</h5>
+            <p><b>Rs.{{product.price}} </b></p>
+            <p>{{product.desc}}</p>
+            <div class="ben">
+                <div class="ben1">Hurry, Only a few left!</div>
+                <div class="ben2">Available offers</div>
+                <div class="ben3"><img src='{% static "prod/i.png" %}'>Special PriceExtra ₹1250 off(price inclusive of
+                    discount)<span>T&C</span></div>
+                <div class="ben3"><img src='{% static "prod/i.png" %}'>Bank OfferFlat ₹100 off on first Flipkart Pay
+                    Later order of ₹500 and above<span>T&C</span></div>
+                <div class="ben3"><img src='{% static "prod/i.png" %}'>Bank Offer10% off on Citi Credit and Debit Cards,
+                    up to ₹1500. On orders of ₹5000 and above<span>T&C</span></div>
+                <div class="ben3"><img src='{% static "prod/i.png" %}'>Bank Offer5% Unlimited Cashback on Flipkart Axis
+                    Bank Credit Card<span>T&C</span></div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+{% comment %} products started from here {% endcomment %}
+
+<h1>RELATED PRODUCTS</h1>
+
+{% load static %}
+
+
+<div class="pro">
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/laptop.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/flor2.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/m1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/flor1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pro">
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/led2.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/fri1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/wash2.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/laptop2.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="pro">
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/m2.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/lapi1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/led1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="product-card">
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img src='{% static "prod/frii1.jpg" %}' alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory">Women,bag</span>
+            <h4><a href="">Women leather bag</a></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Vero, possimus nostrum!</p>
+            <div class="product-bottom-details">
+                <div class="product-price"><small>$96.00</small>$230.99</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+{% comment %} products end here {% endcomment %}
+
+</div>
+
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+    console.log('working');
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+    $('.cart').click(function () {
+        console.log('clicked');
+        var idstr = this.id.toString();
+        console.log(idstr);
+        if (cart[idstr] != undefined) {
+            cart[idstr] = cart[idstr] + 1;
+        }
+        else {
+            cart[idstr] = 1;
+        }
+        console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    });
+    $('#popcart').popover();
+    document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}
